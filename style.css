@@ -1,0 +1,132 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #141e30, #243b55);
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    margin: 0;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+.stopwatch-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px 35px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    width: 380px;
+    animation: fadeIn 1s ease-in-out;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#display {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #00fff2;
+     
+}
+
+.buttons button {
+    padding: 10px 22px;
+    margin: 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-weight: bold;
+}
+
+#start { background-color: #27ae60; color: white; }
+#pause { background-color: #f39c12; color: white; }
+#reset { background-color: #e74c3c; color: white; }
+#lap { background-color: #3498db; color: white; }
+
+.buttons button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px white;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr {
+    animation: fadeRow 0.3s ease;
+}
+
+@keyframes fadeRow {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    background: #ffcc00;
+    color: black;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.theme-btn:hover {
+    background: #ffd633;
+}
+
+/* Light Mode Styles */
+.light-mode {
+    background: linear-gradient(120deg, #f0f0f0, #ffffff);
+    color: black;
+}
+
+.light-mode .stopwatch-container {
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode #display {
+    color: #ff6600;
+    text-shadow: 0 0 10px #ff6600;
+}
+
+.light-mode th {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.light-mode tbody tr:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .theme-btn {
+    background: #222;
+    color: white;
+}
